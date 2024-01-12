@@ -29,4 +29,8 @@ export const saveSurveySubmission = async () => {
     "http://localhost:8000/submissions",
     postOptions
   ); //remember these postOptions are to clarify we are making a POST and not a GET
+
+  //custom event to rerender page after submission. First we "name it" then take it and Dispatch it
+  const customEvent = new CustomEvent("newSubmissionCreated");
+  document.dispatchEvent(customEvent);
 };

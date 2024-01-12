@@ -23,4 +23,10 @@ const render = async () => {
   ${buttonHTML}
   ${submissionHTML}`;
 };
+
+//listening for custom Event from transient state and POST function
+//the first argument comes from where we named this custom Event. In this example, it came from the TransientState.js POST function
+//second argument is the render function...notice no ()
+document.addEventListener("newSubmissionCreated", render);
+
 render();
